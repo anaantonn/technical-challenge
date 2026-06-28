@@ -29,7 +29,6 @@ def build_spark():
         ) \
         .getOrCreate()
 
-
 def sanitize_table(df):
     # Separate columns by type
     string_cols = [c for c, t in df.dtypes if t == "string"]
@@ -43,7 +42,6 @@ def sanitize_table(df):
         df = df.fillna("Unknown", subset=string_cols)
 
     return df
-
 
 def main():
     spark = build_spark()
